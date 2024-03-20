@@ -1,0 +1,102 @@
+<div class="navbar-container">
+  <mat-toolbar class="navbar">
+    <mat-toolbar-row class="nav-container">
+      <span>Asset Management</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+<mat-card class="card">
+  <mat-card-content>
+    <form [formGroup]="registrationform" (ngSubmit)="onSubmit()">
+      <div class="heading">
+        <h2>Registration</h2>
+      </div>
+      <br>
+      <div class="row1">
+        <mat-form-field class="salutation" appearance="outline">
+          <mat-label>Salutation</mat-label>
+          <mat-select required="*">
+            <mat-option>None</mat-option>
+            @for (Salutation of Salutations ; track Salutation) {
+            <mat-option [value]="Salutation">{{Salutation}}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="input-box1" appearance="outline">
+          <mat-label>Full name</mat-label>
+          <input class="input-field" matInput type="text" formControlName="FullName" placeholder="Enter your full name">
+          <mat-error *ngIf="registrationform.get('FullName')?.hasError('required')">Full name is required</mat-error>
+          <mat-error *ngIf="registrationform.get('FullName')?.hasError('FullName')">Please enter a valid email
+            address</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-box2" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input class="input-field" matInput type="Email" formControlName="Email" placeholder="Enter your Email">
+          <mat-error *ngIf="registrationform.get('Email')?.hasError('required')">Email is required</mat-error>
+          <mat-error *ngIf="registrationform.get('Email')?.hasError('Email')">Please enter a valid email
+            address</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="row2">
+        <mat-form-field class="input-box" appearance="outline">
+          <mat-label>User name</mat-label>
+          <input class="input-field" matInput type="text" formControlName="UserName" placeholder="Enter your userName">
+          <mat-error *ngIf="registrationform.get('UserName')?.hasError('required')">Username is required</mat-error>
+          <mat-error *ngIf="registrationform.get('UserName')?.hasError('UserName')">Please enter a valid
+            Username</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="input-box" appearance="outline">
+          <mat-label>Phone Number</mat-label>
+          <input class="input-field" matInput type="text" formControlName="PhoneNumber" placeholder="Enter your number">
+          <mat-error *ngIf="registrationform.get('PhoneNumber')?.hasError('required')">PhoneNumber is
+            required</mat-error>
+          <mat-error *ngIf="registrationform.get('PhoneNumber')?.hasError('PhoneNumber')">Please enter a valid
+            PhoneNumber</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row3">
+        <mat-form-field class="input-box" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input class="input-field" id="password-field1" matInput [type]="showPassword1 ? 'text' : 'password'" type="password" placeholder="Enter Password"
+            formControlName="password" matInput [type]="hidePassword ? 'password' : 'text'" required />
+          <mat-error *ngIf="!registrationform.controls['password'].valid">
+            Enter Strong Password
+          </mat-error>
+          <mat-icon matSuffix (click)="togglePasswordVisibility1()">
+            {{!showPassword1?'visibility_off':'visibility'}}
+          </mat-icon>
+        </mat-form-field>
+        <mat-form-field class="input-box" appearance="outline">
+          <mat-label>Confirm Password </mat-label>
+          <input class="input-field" id="password-field" matInput [type]="showPassword2 ? 'text' : 'password'" type="password" placeholder="Enter Confirm Password"
+            formControlName="confirmPassword" matInput [type]="hidePassword ? 'password' : 'text'" compare="password"
+            appBlockCopyPaste required />
+          <mat-error>
+            Password Do not Match
+          </mat-error>
+          <mat-icon matSuffix (click)="togglePasswordVisibility2()">
+            {{!showPassword2?'visibility_off':'visibility'}}
+          </mat-icon>
+        </mat-form-field>
+        </div>
+        
+        <div class="Gender-container">
+          <mat-label>Gender:-</mat-label>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="Male" class="btn1">Male</mat-radio-button>
+            <mat-radio-button value="Female" class="btn2">Female</mat-radio-button>
+            <mat-radio-button value="Others" class="btn3">Others</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="Register-btn">
+          <span class="returnlogin-container">Already have an account?
+            <a routerLink="/login-page">Login</a></span>
+          <button class="button" mat-raised-button color="primary" (click)="onSubmit()">Register</button>
+        </div>
+    </form>
+  </mat-card-content>
+</mat-card>

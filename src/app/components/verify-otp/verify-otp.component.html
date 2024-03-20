@@ -1,0 +1,31 @@
+<div class="forgetnavbar-container">
+    <mat-toolbar class="navbar" color="primary">
+        <mat-toolbar-row class="nav-container">
+            <span>Asset Management</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
+<mat-card class="card-container">
+    <mat-card-content>
+        <form>
+            <div class="heading">
+                <h2>Enter your OTP</h2>
+            </div>
+            <div class="otp-container">
+                <input type="text" inputmode="numeric" class="otp-input" maxlength="1" />
+                <input type="text" inputmode="numeric" class="otp-input" maxlength="1" />
+                <input type="text" inputmode="numeric" class="otp-input" maxlength="1" />
+                <input type="text" inputmode="numeric" class="otp-input" maxlength="1" />
+                <input type="text" inputmode="numeric" class="otp-input" maxlength="1" />
+                <input type="text" inputmode="numeric" class="otp-input" maxlength="1" />
+              </div>
+            
+
+                  <div class="button-container">
+                    <button class="btn1" routerLink="/forget-password" mat-raised-button color="primary">Back</button>
+                    <button class="btn2" mat-raised-button color="primary" (click)="verifyotp()" routerLink="/set-password">Verify OTP</button>
+                  </div>
+           
+        </form>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-mdc-text-field-wrapper {
+    width: 100%;
+    height: 36px !important;
+}
+
+
+.mdc-text-field--outlined .mat-mdc-form-field-infix {
+    padding-top: var(--mat-form-field-container-vertical-padding);
+    padding-bottom: var(--mat-form-field-container-vertical-padding);
+    margin-bottom: -19px !important;
+}
+.mdc-text-field--no-label .mat-mdc-form-field-infix {
+    margin-bottom: -50px;
+}
+
+mat-mdc-form-field:not(.mat-form-field-disabled) .mat-mdc-floating-label.mdc-floating-label {
+    margin-top: -200px;
+    cursor: inherit;
+
+}
+
+.mat-mdc-form-field-infix,label {
+    margin-bottom: 50px;
+    margin-top: -12px;
+    
+}
+
+.mat-mdc-form-field-icon-suffix>.mat-icon {
+    /* padding: 0 12px; */
+    box-sizing: content-box;
+    padding-top: 39px;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 08px;
+}
+
+
+
+.mat-mdc-raised-button.mat-primary {
+    --mdc-protected-button-container-color: #3f51b5;
+}
+
+.mdc-floating-label--required:not(.mdc-floating-label--hide-required-marker)::after {
+    margin-left: 1px;
+    margin-right: 0px;
+    content: "*";
+    color: red;
+}
+
+.mdc-form-field>label {
+    margin-top: 52px;
+}
+
+.mat-mdc-radio-button.mat-accent {
+    --mdc-radio-disabled-selected-icon-color: black;
+    --mdc-radio-disabled-unselected-icon-color: black;
+    --mdc-radio-unselected-hover-icon-color: #212121;
+    --mdc-radio-unselected-icon-color: rgba(0, 0, 0, 0.54);
+    --mdc-radio-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+    --mdc-radio-selected-focus-icon-color: #3f51b5;
+    --mdc-radio-selected-hover-icon-color: #3f51b5;
+    --mdc-radio-selected-icon-color: #3f51b5;
+    --mdc-radio-selected-pressed-icon-color: #3f51b5;
+    --mat-radio-ripple-color: black;
+    --mat-radio-checked-ripple-color: #3f51b5;
+    --mat-radio-disabled-label-color: rgba(0, 0, 0, 0.38);
+}
