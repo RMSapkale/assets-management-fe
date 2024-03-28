@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -11,10 +11,11 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 
 
 export class RegistrationPageComponent {
-  showPassword: any;
   registrationform !: FormGroup;
   submitted: boolean = false;
   hidePassword: boolean = true;
+  showpassword: any;
+
 
   constructor(private formBuilder: FormBuilder) {
   }
@@ -25,17 +26,16 @@ export class RegistrationPageComponent {
 
 
   ngOnInit(): void {
-    this.registrationform = this.formBuilder.group
-      ({
-        FullName: ["", Validators.required],
-        UserName: ["", Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')],
-        Email: ["", Validators.required, Validators.email],
-        PhoneNumber: ["", Validators.required, Validators.minLength(10), Validators.maxLength(10)],
-        password: ["", Validators.pattern(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/)],
-        confirmPassword: ['', Validators.required],
+    this.registrationform = this.formBuilder.group({
+      FullName: ["", Validators.required],
+      UserName: ["", Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')],
+      Email: ["", Validators.required, Validators.email],
+      PhoneNumber: ["", Validators.required, Validators.minLength(10), Validators.maxLength(10)],
+      password: ["", Validators.pattern(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/)],
+      confirmpassword: ['', Validators.required],
     }, {
-      validators: this.mustMatch('password', 'confirmPassword')
-    }      );
+      validators: this.mustMatch('password', 'confirmpassword')
+    });
   }
 
   mustMatch(controlName: string, matchingControlName: string) {
@@ -54,16 +54,15 @@ export class RegistrationPageComponent {
     }
   }
 
-  public showPassword1: boolean = false;
-  public showPassword2: boolean = false;
+  public showpassword1: boolean = false;
+  public showpassword2: boolean = false;
 
-   
   public togglePasswordVisibility1(): void {
-    this.showPassword1 = !this.showPassword1;
+    this.showpassword1 = !this.showpassword1;
   }
 
   public togglePasswordVisibility2(): void {
-    this.showPassword2 = !this.showPassword2;
+    this.showpassword2 = !this.showpassword2;
   }
 
   onSubmit() {

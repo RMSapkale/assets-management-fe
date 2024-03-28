@@ -8,6 +8,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class LoginPageComponent {
   loginform !: FormGroup;
+
   constructor(private formBuilder: FormBuilder) {
   }
 
@@ -15,19 +16,19 @@ export class LoginPageComponent {
 
   ngOnInit(): void {
     this.loginform = this.formBuilder.group
-    ({
-      email: ["", Validators.required , Validators.email],
-      password: ["", [Validators.required, Validators.pattern('((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15})')]]
+      ({
+        email: ["", [Validators.required, Validators.email]],
+        password: ["", [Validators.required, Validators.pattern('((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15})')]]
 
-    })  }
+      })
+  }
 
   public togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
-
   }
 
   login() {
-    // alert('login successful');    
+    console.log(this.loginform.value)
   }
 
 
