@@ -1,52 +1,49 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AbstractControl,ValidatorFn } from '@angular/forms';
-
 
 @Component({
   selector: 'app-set-password',
   templateUrl: './set-password.component.html',
   styleUrl: './set-password.component.scss'
 })
+
 export class SetPasswordComponent {
-setpassword !: FormGroup;
-ConfirmPassword : any;
+  setpassword !: FormGroup;
+  submitted: boolean = false;
+  hidePassword: boolean = true;
+  showpassword: any;
 
-
-  constructor(private formBuilder : FormBuilder){ 
+  constructor(private formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
     this.setpassword = this.formBuilder.group({
-        newpassword : ['', [Validators.required,Validators.minLength(8), Validators.maxLength(15)]],
-        confirmpassword : ['', [Validators.required, Validators.minLength(8), Validators.maxLength(15)]],
-      },{Validators:this.matchValidators('newpassword','ConfirmPassword')});
-      }
-      
-      matchValidators (controlName:string, matchingControlName:string): ValidatorFn {
-        return (abstractControl:AbstractControl) =>  {
-          const control = abstractControl.get(controlName);
-      const matchingControl = abstractControl.get(matchingControlName);
+      password: ["", Validators.pattern(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/)],
+      confirmpassword: ['', Validators.required],
+    }, {
+      Validators: this.mustMatch('password', 'confirmpassword')
+    });
+  }
 
-      if (matchingControl!.errors && !matchingControl!.errors?.['confirmedValidator']) {
-        return null;
-        }
-        if (control!.value !== matchingControl!.value) {
-          const error={ confirmedValidator: 'Passwords do not match.' };
-          matchingControl!.setErrors(error);
-          return error;
-        } else {
-          matchingControl!.setErrors(null);
-          return null;
-        }
+  mustMatch(controlName: string, matchingControlName: string) {
+    return (formGroup: FormGroup) => {
+      const control = formGroup.controls[controlName];
+      const matchingControl = formGroup.controls[matchingControlName]
+      if (matchingControl.errors && !matchingControl.errors['mustMatch']) {
+        return
+      }
+      if (control.value !== matchingControl.value) {
+        matchingControl.setErrors({ mustMatch: true })
+      }
+      else {
+        matchingControl.setErrors(null);
       }
     }
+  }
 
 
   public showPassword1: boolean = false;
   public showPassword2: boolean = false;
-
-   
   public togglePasswordVisibility1(): void {
     this.showPassword1 = !this.showPassword1;
   }
@@ -55,5 +52,7 @@ ConfirmPassword : any;
     this.showPassword2 = !this.showPassword2;
   }
 
-  
+  onSubmit() {
+    this.submitted = true;
+  }
 }

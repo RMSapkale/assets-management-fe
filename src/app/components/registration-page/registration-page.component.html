@@ -61,42 +61,39 @@
       <div class="row3">
         <mat-form-field class="input-box" appearance="outline">
           <mat-label>Password</mat-label>
-          <input class="input-field" id="password-field1" matInput [type]="showPassword1 ? 'text' : 'password'" type="password" placeholder="Enter Password"
-            formControlName="password" matInput [type]="hidePassword ? 'password' : 'text'" required />
-          <mat-error *ngIf="!registrationform.controls['password'].valid">
-            Enter Strong Password
-          </mat-error>
+          <input class="input-field" id="password-field1" matInput [type]="showpassword1 ? 'text' : 'password'"
+            type="password" placeholder="Enter Password" formControlName="password" matInput
+            [type]="hidePassword ? 'password' : 'text'" required>
+          <mat-error *ngIf="!registrationform.controls['password'].valid"> Enter Password </mat-error>
           <mat-icon matSuffix (click)="togglePasswordVisibility1()">
-            {{!showPassword1?'visibility_off':'visibility'}}
+            {{!showpassword1?'visibility_off':'visibility'}}
           </mat-icon>
         </mat-form-field>
         <mat-form-field class="input-box" appearance="outline">
           <mat-label>Confirm Password </mat-label>
-          <input class="input-field" id="password-field" matInput [type]="showPassword2 ? 'text' : 'password'" type="password" placeholder="Enter Confirm Password"
-            formControlName="confirmPassword" matInput [type]="hidePassword ? 'password' : 'text'" compare="password"
-            appBlockCopyPaste required />
-          <mat-error>
-            Password Do not Match
-          </mat-error>
+          <input class="input-field" id="password-field" matInput [type]="showpassword2 ? 'text' : 'password'"
+            type="password" formControlName="confirmpassword" placeholder="Enter Confirm Password" matInput
+            [type]="hidePassword ? 'password' : 'text'" compare="password" required>
+          <mat-error>Password Does not Match</mat-error>
           <mat-icon matSuffix (click)="togglePasswordVisibility2()">
-            {{!showPassword2?'visibility_off':'visibility'}}
+            {{!showpassword2?'visibility_off':'visibility'}}
           </mat-icon>
         </mat-form-field>
-        </div>
-        
-        <div class="Gender-container">
-          <mat-label>Gender:-</mat-label>
-          <mat-radio-group aria-label="Select an option">
-            <mat-radio-button value="Male" class="btn1">Male</mat-radio-button>
-            <mat-radio-button value="Female" class="btn2">Female</mat-radio-button>
-            <mat-radio-button value="Others" class="btn3">Others</mat-radio-button>
-          </mat-radio-group>
-        </div>
-        <div class="Register-btn">
-          <span class="returnlogin-container">Already have an account?
-            <a routerLink="/login-page">Login</a></span>
-          <button class="button" mat-raised-button color="primary" (click)="onSubmit()">Register</button>
-        </div>
+      </div>
+
+      <div class="Gender-container">
+        <mat-label>Gender:-</mat-label>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="Male" class="btn1">Male</mat-radio-button>
+          <mat-radio-button value="Female" class="btn2">Female</mat-radio-button>
+          <mat-radio-button value="Others" class="btn3">Others</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="Register-btn">
+        <span class="returnlogin-container">Already have an account?
+          <a routerLink="/login-page">Login</a></span>
+        <button class="button" mat-raised-button color="primary" (click)="onSubmit()">Register</button>
+      </div>
     </form>
   </mat-card-content>
 </mat-card>
