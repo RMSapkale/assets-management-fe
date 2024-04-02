@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ValidationUtils } from '../../utils/validators.util';
 
 
 @Component({
@@ -11,10 +12,11 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 
 
 export class RegistrationPageComponent {
-  showPassword: any;
-  registrationform !: FormGroup;
+  registrationForm !: FormGroup;
   submitted: boolean = false;
-  hidePassword: boolean = true;
+  public showPassword: boolean = false;
+  public showConfirmPassword: boolean = false;
+
 
   constructor(private formBuilder: FormBuilder) {
   }
@@ -25,45 +27,26 @@ export class RegistrationPageComponent {
 
 
   ngOnInit(): void {
-    this.registrationform = this.formBuilder.group
-      ({
-        FullName: ["", Validators.required],
-        UserName: ["", Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')],
-        Email: ["", Validators.required, Validators.email],
-        PhoneNumber: ["", Validators.required, Validators.minLength(10), Validators.maxLength(10)],
-        password: ["", Validators.pattern(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/)],
-        confirmPassword: ['', Validators.required],
+    this.registrationForm = this.formBuilder.group({
+      FullName: ["", Validators.required],
+      UserName: ["", Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')],
+      Email: ["", Validators.required, Validators.email],
+      PhoneNumber: ["", Validators.required, Validators.minLength(10), Validators.maxLength(10)],
+      password: ["", Validators.pattern(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/)],
+      confirmPassword: ['', Validators.required],
     }, {
-      validators: this.mustMatch('password', 'confirmPassword')
-    }      );
+      validators: ValidationUtils.mustMatch('password', 'confirmPassword')
+    });
   }
 
-  mustMatch(controlName: string, matchingControlName: string) {
-    return (formGroup: FormGroup) => {
-      const control = formGroup.controls[controlName];
-      const matchingControl = formGroup.controls[matchingControlName]
-      if (matchingControl.errors && !matchingControl.errors['mustMatch']) {
-        return
-      }
-      if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({ mustMatch: true })
-      }
-      else {
-        matchingControl.setErrors(null);
-      }
-    }
+
+
+  public togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
 
-  public showPassword1: boolean = false;
-  public showPassword2: boolean = false;
-
-   
-  public togglePasswordVisibility1(): void {
-    this.showPassword1 = !this.showPassword1;
-  }
-
-  public togglePasswordVisibility2(): void {
-    this.showPassword2 = !this.showPassword2;
+  public toggleConfirmPasswordVisibility(): void {
+    this.showConfirmPassword = !this.showConfirmPassword;
   }
 
   onSubmit() {

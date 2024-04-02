@@ -1,0 +1,149 @@
+.main-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.main-content {
+    padding-top: 1rem;
+}
+
+mat-card-title {
+    text-align: center;
+}
+
+.firstSection {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 70px;
+}
+
+.assessCard {
+    width: 250px;
+    height: 200px;
+
+}
+
+.assessImage {
+    width: 100px;
+    height: 100px;
+    margin-left: 55px;
+    margin-top: 20px;
+    background-image: url('../../../assets/evaluation.png');
+    background-size: cover;
+    background-size: 100px;
+    background-repeat: no-repeat;
+}
+
+.valueOfAssetCard {
+    width: 250px;
+    height: 200px;
+    margin-left: 30px;
+}
+
+.valueOfAssetImg {
+    width: 100px;
+    height: 100px;
+    margin-left: 55px;
+    margin-top: 20px;
+    background-image: url('../../../assets/value.png');
+    background-size: cover;
+    background-size: 100px;
+    background-repeat: no-repeat;
+}
+
+.netAssetCard {
+    width: 250px;
+    height: 200px;
+    margin-left: 30px;
+}
+
+.netAssetImg {
+    width: 100px;
+    height: 100px;
+    margin-left: 55px;
+    margin-top: 20px;
+    background-image: url('../../../assets/assets.png');
+    background-size: cover;
+    background-size: 100px;
+    background-repeat: no-repeat;
+}
+
+.fascalYearCard {
+    width: 250px;
+    height: 200px;
+    margin-left: 30px;
+}
+
+.fascalYearImg {
+    width: 100px;
+    height: 100px;
+    margin-left: 55px;
+    margin-top: 20px;
+    background-image: url('../../../assets/asset-management.png');
+    background-size: cover;
+    background-size: 100px;
+    background-repeat: no-repeat;
+}
+
+.secondSection {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+
+}
+
+.assetValueCard {
+    width: 535px;
+    height: 250px;
+}
+
+.assetValueImg {
+    width: 500px;
+    height: 400px;
+    margin-left: 140px;
+    margin-bottom: 150px;
+    background-image: url('../../../assets/bar-graph.png');
+    background-size: cover;
+    background-size: 200px;
+    text-align: center;
+    background-repeat: no-repeat;
+}
+
+.fundsCard {
+    width: 535px;
+    height: 250px;
+    margin-left: 30px;
+}
+
+.fundsImg {
+    width: 500px;
+    height: 400px;
+    margin-left: 140px;
+    margin-bottom: 150px;
+    background-image: url('../../../assets/growth.png');
+    background-size: cover;
+    background-size: 200px;
+    text-align: center;
+    background-repeat: no-repeat;
+}
+
+.thirdSection {
+    display: flex;
+    margin-top: 50px;
+
+}
+
+.feedsCard {
+    width: 535px;
+    height: 250px;
+}
+
+.AlertsCard {
+    width: 535px;
+    height: 250px;
+    margin-left: 30px;
+}
+
+.table {
+    margin-left: 30px;
+}
