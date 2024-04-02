@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ValidationUtils } from '../../utils/validators.util';
 
 @Component({
   selector: 'app-set-password',
@@ -12,6 +13,8 @@ export class SetPasswordComponent {
   submitted: boolean = false;
   hidePassword: boolean = true;
   showpassword: any;
+  showpassword1: boolean = false;
+  showpassword2: boolean = false;
 
   constructor(private formBuilder: FormBuilder) {
   }
@@ -21,35 +24,16 @@ export class SetPasswordComponent {
       password: ["", Validators.pattern(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/)],
       confirmpassword: ['', Validators.required],
     }, {
-      Validators: this.mustMatch('password', 'confirmpassword')
+      validators: ValidationUtils.mustMatch('password', 'confirmpassword')
     });
   }
 
-  mustMatch(controlName: string, matchingControlName: string) {
-    return (formGroup: FormGroup) => {
-      const control = formGroup.controls[controlName];
-      const matchingControl = formGroup.controls[matchingControlName]
-      if (matchingControl.errors && !matchingControl.errors['mustMatch']) {
-        return
-      }
-      if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({ mustMatch: true })
-      }
-      else {
-        matchingControl.setErrors(null);
-      }
-    }
+  togglePasswordVisibility1(): void {
+    this.showpassword1 = !this.showpassword1;
   }
 
-
-  public showPassword1: boolean = false;
-  public showPassword2: boolean = false;
-  public togglePasswordVisibility1(): void {
-    this.showPassword1 = !this.showPassword1;
-  }
-
-  public togglePasswordVisibility2(): void {
-    this.showPassword2 = !this.showPassword2;
+  togglePasswordVisibility2(): void {
+    this.showpassword2 = !this.showpassword2;
   }
 
   onSubmit() {

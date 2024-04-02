@@ -6,6 +6,7 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 import { SetPasswordComponent } from './components/set-password/set-password.component';
 import { DashboardPageComponent } from './components/dashboard-page/dashboard-page.component';
+import { EmployeeProfileComponent } from './components/employee-profile/employee-profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login-page', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'verify-otp', component: VerifyOtpComponent },
   { path: 'set-password', component: SetPasswordComponent },
   { path: 'dashboard-page', component: DashboardPageComponent },
+  { path: 'employee-profile', component: EmployeeProfileComponent },
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ValidationUtils } from '../../utils/validators.util';
 
 
 @Component({
@@ -34,24 +35,8 @@ export class RegistrationPageComponent {
       password: ["", Validators.pattern(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/)],
       confirmpassword: ['', Validators.required],
     }, {
-      validators: this.mustMatch('password', 'confirmpassword')
+      validators: ValidationUtils.mustMatch('password', 'confirmpassword')
     });
-  }
-
-  mustMatch(controlName: string, matchingControlName: string) {
-    return (formGroup: FormGroup) => {
-      const control = formGroup.controls[controlName];
-      const matchingControl = formGroup.controls[matchingControlName]
-      if (matchingControl.errors && !matchingControl.errors['mustMatch']) {
-        return
-      }
-      if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({ mustMatch: true })
-      }
-      else {
-        matchingControl.setErrors(null);
-      }
-    }
   }
 
   public showpassword1: boolean = false;

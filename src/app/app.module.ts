@@ -20,6 +20,9 @@ import { SetPasswordComponent } from './components/set-password/set-password.com
 import { DashboardPageComponent } from './components/dashboard-page/dashboard-page.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDivider } from '@angular/material/divider';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { HeaderComponent } from './components/header/header.component';
+import { EmployeeProfileComponent } from './components/employee-profile/employee-profile.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import { MatDivider } from '@angular/material/divider';
     VerifyOtpComponent,
     SetPasswordComponent,
     DashboardPageComponent,
+    SidenavComponent,
+    HeaderComponent,
+    EmployeeProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,9 +52,6 @@ import { MatDivider } from '@angular/material/divider';
     MatSelectModule,
     MatSidenavModule,
     MatDivider,
-
-
-
   ],
   providers: [
     provideClientHydration(),

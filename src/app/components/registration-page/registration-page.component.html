@@ -1,10 +1,4 @@
-<div class="navbar-container">
-  <mat-toolbar class="navbar">
-    <mat-toolbar-row class="nav-container">
-      <span>Asset Management</span>
-    </mat-toolbar-row>
-  </mat-toolbar>
-</div>
+<app-header></app-header>
 <mat-card class="card">
   <mat-card-content>
     <form [formGroup]="registrationform" (ngSubmit)="onSubmit()">
@@ -80,7 +74,6 @@
           </mat-icon>
         </mat-form-field>
       </div>
-
       <div class="Gender-container">
         <mat-label>Gender:-</mat-label>
         <mat-radio-group aria-label="Select an option">

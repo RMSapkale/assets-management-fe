@@ -1,59 +1,96 @@
-<mat-toolbar class="navbar" color="primary">
-  <mat-toolbar-row class="nav-container">
-    <span>Asset Management</span>
-  </mat-toolbar-row>
-</mat-toolbar>
-
-
-<mat-sidenav-container class="sidenav-container">
-
-
-  <mat-sidenav mode="side" opened>
-
-
-    <div class="image-container">
-      <label class="hoverable">
-        <img [src]="imageUrl ? imageUrl : 'https://www.w3schools.com/howto/img_avatar.png'">
-
-      </label>
-      <br>
-      <div>
-        <button id="fileInput" type="file" (click)="onSelectFile($event)">
-          <div>Choose file</div>
-        </button>
-      </div>
+<app-header></app-header>
+<div class="main-container">
+    <div class="sidenav-container">
+        <app-sidenav></app-sidenav>
     </div>
-    <br>
-    <button mat-button class='delete-btn' *ngIf="imageUrl" (click)="delete()">delete</button>
 
-    <mat-divider></mat-divider>
+    <div class="main-content">
+        <div class="header-title">
+            <h2><u>Welcome to dashboard</u></h2>
+        </div>
+        <div class="section1">
+            <mat-card class="card1">
+                <mat-card-title>Number of Assess</mat-card-title>
+                <mat-card-content>
+                    <div class="image1">
 
-    <button mat-button class="menu-button">
-      <mat-icon>home</mat-icon>
-      <span>Home</span>
-    </button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
 
-    <button mat-button class="menu-button">
-      <mat-icon>person</mat-icon>
-      <span>Profile</span>
-    </button>
+            <mat-card class="card2">
+                <mat-card-title>Value of Assets</mat-card-title>
+                <mat-card-content>
+                    <div class="image2">
 
-    <button mat-button class="menu-button">
-      <mat-icon>info</mat-icon>
-      <span>about</span>
-    </button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
 
-    <mat-divider></mat-divider>
+            <mat-card class="card3">
+                <mat-card-title>Net Assets Value</mat-card-title>
+                <mat-card-content>
+                    <div class="image3">
 
-    <button mat-button class="menu-button">
-      <mat-icon>help</mat-icon>
-      <span>Help</span>
-    </button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
 
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div class="sidenav-content">
-      Main content
+            <mat-card class="card4">
+                <mat-card-title>Purchases in Fascal Year</mat-card-title>
+                <mat-card-content>
+                    <div class="image4">
+
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div class="section2">
+            <mat-card class="card5">
+                <mat-card-title>Asset value</mat-card-title>
+                <mat-card-content>
+                    <div class="image5">
+
+                    </div>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card class="card6">
+                <mat-card-title>Funds</mat-card-title>
+                <mat-card-content>
+                    <div class="image6">
+
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div class="section3">
+            <mat-card class="card7">
+                <mat-card-title>Feeds</mat-card-title>
+                <mat-card-content>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Asset tag ID</th>
+                                <th>Description</th>
+                                <th>Due date</th>
+                            </tr>
+                        </thead>
+
+                    </table>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card class="card8">
+                <mat-card-title>Alerts</mat-card-title>
+                <mat-card-content>
+                    <div>
+
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+</div>

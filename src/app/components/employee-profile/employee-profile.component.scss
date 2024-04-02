@@ -1,0 +1,45 @@
+* {
+  height: 30px
+}
+
+.main-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.section1 {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 70px;
+}
+
+.card1 {
+  width: 500px;
+  height: 300px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.card2 {
+  width: 500px;
+  height: 300px;
+  margin-left: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+
+.iconbutton {
+  float: right;
+  font-size: 18px;
+  color: #343434;
+}
+
+.mat-card-title {
+  margin-left: 90px;
+}

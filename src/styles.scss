@@ -2,13 +2,27 @@
 
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .mat-mdc-text-field-wrapper {
     width: 100%;
@@ -21,6 +35,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding-bottom: var(--mat-form-field-container-vertical-padding);
     margin-bottom: -19px !important;
 }
+
 .mdc-text-field--no-label .mat-mdc-form-field-infix {
     margin-bottom: -50px;
 }
@@ -31,10 +46,11 @@ mat-mdc-form-field:not(.mat-form-field-disabled) .mat-mdc-floating-label.mdc-flo
 
 }
 
-.mat-mdc-form-field-infix,label {
+.mat-mdc-form-field-infix,
+label {
     margin-bottom: 50px;
     margin-top: -12px;
-    
+
 }
 
 .mat-mdc-form-field-icon-suffix>.mat-icon {
@@ -76,4 +92,15 @@ mat-mdc-form-field:not(.mat-form-field-disabled) .mat-mdc-floating-label.mdc-flo
     --mat-radio-ripple-color: black;
     --mat-radio-checked-ripple-color: #3f51b5;
     --mat-radio-disabled-label-color: rgba(0, 0, 0, 0.38);
+}
+
+.image6[_ngcontent-ng-c1260226884] {
+    width: 700px;
+    height: 500px;
+    margin-left: 140px;
+    margin-bottom: 150px;
+    background-size: cover;
+    background-size: 200px;
+    text-align: center;
+    background-repeat: no-repeat;
 }
