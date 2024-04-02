@@ -12,10 +12,10 @@ import { ValidationUtils } from '../../utils/validators.util';
 
 
 export class RegistrationPageComponent {
-  registrationform !: FormGroup;
+  registrationForm !: FormGroup;
   submitted: boolean = false;
-  hidePassword: boolean = true;
-  showpassword: any;
+  public showPassword: boolean = false;
+  public showConfirmPassword: boolean = false;
 
 
   constructor(private formBuilder: FormBuilder) {
@@ -27,27 +27,26 @@ export class RegistrationPageComponent {
 
 
   ngOnInit(): void {
-    this.registrationform = this.formBuilder.group({
+    this.registrationForm = this.formBuilder.group({
       FullName: ["", Validators.required],
       UserName: ["", Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')],
       Email: ["", Validators.required, Validators.email],
       PhoneNumber: ["", Validators.required, Validators.minLength(10), Validators.maxLength(10)],
       password: ["", Validators.pattern(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/)],
-      confirmpassword: ['', Validators.required],
+      confirmPassword: ['', Validators.required],
     }, {
-      validators: ValidationUtils.mustMatch('password', 'confirmpassword')
+      validators: ValidationUtils.mustMatch('password', 'confirmPassword')
     });
   }
 
-  public showpassword1: boolean = false;
-  public showpassword2: boolean = false;
 
-  public togglePasswordVisibility1(): void {
-    this.showpassword1 = !this.showpassword1;
+
+  public togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
 
-  public togglePasswordVisibility2(): void {
-    this.showpassword2 = !this.showpassword2;
+  public toggleConfirmPasswordVisibility(): void {
+    this.showConfirmPassword = !this.showConfirmPassword;
   }
 
   onSubmit() {

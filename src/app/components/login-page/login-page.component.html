@@ -2,27 +2,26 @@
 <mat-card class="card">
   <mat-card-content>
     <div>
-      <form [formGroup]="loginform">
-        <h2 class="signin">Sign in</h2>
+      <form [formGroup]="loginForm">
+        <h2 class="signIn">Sign In</h2>
         <div class="form-field">
-          <mat-form-field class="input-box1" appearance="outline">
+          <mat-form-field class="emailInputBox" appearance="outline">
             <mat-label>Email</mat-label>
             <input class="input-field" matInput type="email" formControlName="email" placeholder="Ex. pat@example.com"
               required>
-            <mat-error *ngIf="loginform.get('email')?.hasError('required')">Email is required</mat-error>
-            <mat-error *ngIf="loginform.get('email')?.hasError('email')">Please enter a valid email address
+            <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Email is required</mat-error>
+            <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Please enter a valid email address
             </mat-error>
           </mat-form-field>
-          <div class="forgot">
-            <a href="#" routerLink="/forget-password">Forgot password?</a>
+          <div class="forgot-Link">
+            <a href="#" routerLink="/forget-password">Forgot Password?</a>
           </div>
-          <mat-form-field class="input-box2" appearance="outline">
+          <mat-form-field class="passwordInputBox" appearance="outline">
             <mat-label>Password</mat-label>
             <input class="input-field" matInput [type]="showPassword ? 'text' : 'password'" formControlName="password"
               placeholder="Password" required>
-            <mat-error *ngIf="loginform.get('password')?.hasError('required')">Password is required</mat-error>
-            <mat-error *ngIf="loginform.get('password')?.hasError('password')">Please enter a valid password
-            </mat-error>
+            <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password is required</mat-error>
+            <mat-error *ngIf="loginForm.get('password')?.hasError('password')">Please enter a valid password</mat-error>
             <mat-icon matSuffix (click)="togglePasswordVisibility()">
               {{!showPassword?'visibility_off':'visibility'}}
             </mat-icon>
@@ -30,13 +29,13 @@
         </div>
       </form>
     </div>
-    <div class="login-btn">
-      <button mat-raised-button color="primary" class="btn" (click)="login()"
+    <div class="login-button">
+      <button mat-raised-button color="primary" class="button" (click)="login()"
         routerLink="/dashboard-page">Login</button>
     </div>
     <div class="register-link">
       <p>Don't have an account?
-        <a class="register-btn" routerLink="/Registration">Register</a>
+        <a class="register-button" routerLink="/Registration">Register</a>
       </p>
     </div>
     <div class="footer">
@@ -44,10 +43,10 @@
       <div class="seperator">
         <p>or</p>
       </div>
-      <hr class="solid2">
+      <hr class="solids">
     </div>
     <div class="button-setup">
-      <div class="btn2"></div>
+      <div class="azureButton"></div>
       <button color="primary">Login with microsoft azure</button>
     </div>
   </mat-card-content>

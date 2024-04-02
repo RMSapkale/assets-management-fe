@@ -7,7 +7,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrl: './login-page.component.scss'
 })
 export class LoginPageComponent {
-  loginform !: FormGroup;
+  loginForm !: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
   }
@@ -15,11 +15,10 @@ export class LoginPageComponent {
   public showPassword: boolean = false;
 
   ngOnInit(): void {
-    this.loginform = this.formBuilder.group
+    this.loginForm = this.formBuilder.group
       ({
         email: ["", [Validators.required, Validators.email]],
         password: ["", [Validators.required, Validators.pattern('((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15})')]]
-
       })
   }
 
@@ -28,7 +27,7 @@ export class LoginPageComponent {
   }
 
   login() {
-    console.log(this.loginform.value)
+    alert('login successful');
   }
 
 

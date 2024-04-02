@@ -9,31 +9,29 @@ import { ValidationUtils } from '../../utils/validators.util';
 })
 
 export class SetPasswordComponent {
-  setpassword !: FormGroup;
+  setPassword !: FormGroup;
   submitted: boolean = false;
-  hidePassword: boolean = true;
-  showpassword: any;
-  showpassword1: boolean = false;
-  showpassword2: boolean = false;
+  showPassword: boolean = false;
+  showConfirmPassword: boolean = false;
 
   constructor(private formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
-    this.setpassword = this.formBuilder.group({
+    this.setPassword = this.formBuilder.group({
       password: ["", Validators.pattern(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/)],
-      confirmpassword: ['', Validators.required],
+      confirmPassword: ['', Validators.required],
     }, {
-      validators: ValidationUtils.mustMatch('password', 'confirmpassword')
+      validators: ValidationUtils.mustMatch('password', 'confirmPassword')
     });
   }
 
-  togglePasswordVisibility1(): void {
-    this.showpassword1 = !this.showpassword1;
+  toggleNewPasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
 
-  togglePasswordVisibility2(): void {
-    this.showpassword2 = !this.showpassword2;
+  toggleConfirmPasswordVisibility(): void {
+    this.showConfirmPassword = !this.showConfirmPassword;
   }
 
   onSubmit() {

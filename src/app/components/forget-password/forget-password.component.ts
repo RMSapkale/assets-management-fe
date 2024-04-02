@@ -6,23 +6,22 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrl: './forget-password.component.scss'
 })
 export class ForgetPasswordComponent {
-validateForget: any;
-forgetForm !: FormGroup;
+  forgetForm !: FormGroup;
 
 
-constructor(private formBuilder: FormBuilder) {
-  
-}
-ngOnInit(): void {
-  this.forgetForm = this.formBuilder.group
-  ({
-    email: ["", [Validators.required,Validators.email]],
-  })
-   
-}
+  constructor(private formBuilder: FormBuilder) {
 
-getotp() {
-  alert ('OTP Sent');
-}
+  }
+  ngOnInit(): void {
+    this.forgetForm = this.formBuilder.group
+      ({
+        email: ["", [Validators.required, Validators.email]],
+      })
+
+  }
+
+  getotp() {
+    alert('OTP Sent');
+  }
 
 }

@@ -11,135 +11,134 @@ mat-card-title {
     text-align: center;
 }
 
-.section1 {
+.firstSection {
     display: flex;
     justify-content: space-around;
     margin-top: 70px;
 }
 
-.card1 {
+.assessCard {
     width: 250px;
     height: 200px;
 
 }
 
-.image1 {
+.assessImage {
     width: 100px;
     height: 100px;
     margin-left: 55px;
     margin-top: 20px;
-    background-image: url('D:/assets-management-fe/src/assets/evaluation.png');
+    background-image: url('../../../assets/evaluation.png');
     background-size: cover;
     background-size: 100px;
     background-repeat: no-repeat;
 }
 
-.card2 {
-    width: 250px;
-    height: 200px;
-    margin-left: 30px;
-}
-
-.image2 {
-    width: 100px;
-    height: 100px;
-    margin-left: 55px;
-    margin-top: 20px;
-    background-image: url('D:/assets-management-fe/src/assets/value.png');
-    background-size: cover;
-    background-size: 100px;
-    background-repeat: no-repeat;
-}
-
-.card3 {
+.valueOfAssetCard {
     width: 250px;
     height: 200px;
     margin-left: 30px;
 }
 
-.image3 {
+.valueOfAssetImg {
     width: 100px;
     height: 100px;
     margin-left: 55px;
     margin-top: 20px;
-    background-image: url('D:/assets-management-fe/src/assets/assets.png');
+    background-image: url('../../../assets/value.png');
     background-size: cover;
     background-size: 100px;
     background-repeat: no-repeat;
 }
 
-.card4 {
+.netAssetCard {
     width: 250px;
     height: 200px;
     margin-left: 30px;
 }
 
-.image4 {
+.netAssetImg {
     width: 100px;
     height: 100px;
     margin-left: 55px;
     margin-top: 20px;
-    background-image: url('D:/assets-management-fe/src/assets/asset-management.png');
+    background-image: url('../../../assets/assets.png');
     background-size: cover;
     background-size: 100px;
     background-repeat: no-repeat;
 }
 
-.section2 {
+.fascalYearCard {
+    width: 250px;
+    height: 200px;
+    margin-left: 30px;
+}
+
+.fascalYearImg {
+    width: 100px;
+    height: 100px;
+    margin-left: 55px;
+    margin-top: 20px;
+    background-image: url('../../../assets/asset-management.png');
+    background-size: cover;
+    background-size: 100px;
+    background-repeat: no-repeat;
+}
+
+.secondSection {
     display: flex;
     justify-content: space-around;
     margin-top: 50px;
 
 }
 
-.card5 {
+.assetValueCard {
     width: 535px;
     height: 250px;
 }
 
-.image5 {
+.assetValueImg {
     width: 500px;
     height: 400px;
     margin-left: 140px;
     margin-bottom: 150px;
-    background-image: url('D:/assets-management-fe/src/assets/bar-graph.png');
+    background-image: url('../../../assets/bar-graph.png');
     background-size: cover;
     background-size: 200px;
     text-align: center;
     background-repeat: no-repeat;
 }
 
-.card6 {
+.fundsCard {
     width: 535px;
     height: 250px;
     margin-left: 30px;
 }
 
-.image6 {
+.fundsImg {
     width: 500px;
     height: 400px;
     margin-left: 140px;
     margin-bottom: 150px;
-    background-image: url('D:/assets-management-fe/src/assets/growth.png');
+    background-image: url('../../../assets/growth.png');
     background-size: cover;
     background-size: 200px;
     text-align: center;
     background-repeat: no-repeat;
 }
 
-.section3 {
+.thirdSection {
     display: flex;
-    // justify-content: space-around;
     margin-top: 50px;
 
 }
 
-.card7 {
+.feedsCard {
     width: 535px;
     height: 250px;
 }
 
-.card8 {
+.AlertsCard {
     width: 535px;
     height: 250px;
     margin-left: 30px;
